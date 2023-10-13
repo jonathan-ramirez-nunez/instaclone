@@ -14,6 +14,18 @@
       <li>
         <%= link_to "About Page", home_about_path, class:"nav-link" %>
       </li>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to "Sign Out", destroy_user_session_path, class:"nav-link", style:"border:none;" %>
+        </li>
+        <li>
+          <%= link_to "Edit Account", edit_user_password_path, class:"nav-link", style:"border:none;" %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "Sign In", new_user_registration_path, class:"nav-link", style:"border:none;" %>
+        </li>
+      <% end %>
       <%# <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
