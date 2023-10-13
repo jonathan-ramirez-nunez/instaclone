@@ -20,8 +20,10 @@
   <body>
     <%= render "layouts/navbar" %>
     <%= yield %>
+    <!--  Devise gem requires these but already have notice implemented elsewhere
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    -->
     <%= render "layouts/footer" %>
   </body>
 </html>

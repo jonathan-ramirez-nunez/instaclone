@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <%= link_to "Home",  root_path, class:"navbar-brand" %>
+    <%= link_to "Home",  root_path, class:"navbar-brand", style:"margin-left: 20px;" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 20px;">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
       </li>
@@ -19,7 +19,7 @@
           <%= link_to "Sign Out", destroy_user_session_path, class:"nav-link", style:"border:none;" %>
         </li>
         <li>
-          <%= link_to "Edit Account", edit_user_password_path, class:"nav-link", style:"border:none;" %>
+          <%= link_to "Edit Account", edit_user_registration_path, class:"nav-link" %>
         </li>
       <% else %>
         <li>
@@ -40,10 +40,15 @@
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
-    </ul> %>
+    %>
+    
+    </ul>
+
+    <%#     ----------------- SEARCH BAR we never used--------------------
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+    %>
   </div>
 </nav>
