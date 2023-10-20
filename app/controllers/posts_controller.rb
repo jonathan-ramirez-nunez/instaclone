@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
 
+  # dont let user create, update or destroy a post unless theyre signed in.
+  # this line will redirect to login page.
+  # if theyre not signed in, still let them view and see the post
+  before_action :authenticate_user!, except: [:index, :show]
+
   # GET /posts or /posts.json
   def index
     @posts = Post.all
@@ -65,6 +70,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :description, :keywords, images: [])
+      params.require(:post).permit(:title, :description, :keywords, :user_id, images: [])
     end
 end
